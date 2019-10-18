@@ -1,0 +1,22 @@
+{
+  "name": "GeeksHubs",
+  "version": "1.0.0",
+  "description": "testing node features",
+  "main": "server.js",
+  "author": "jordi valentín",
+  "license": "MIT",
+  "scripts": {
+    "readCsv": "node stream-require.js",
+    "server": "node server.js",
+    "server:express": "node server-express.js"
+  },
+  "dependencies": {
+    "csv-parser": "^2.3.1",
+    "execution-time": "^1.3.0",
+    "express": "^4.17.1",
+    "fast-csv": "^3.4.0",
+    "query-string": "^6.8.3",
+    "request": "^2.88.0",
+    "yargs": "^14.2.0"
+  }
+}

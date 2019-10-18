@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Llamar y rellenar cajetines de texto">
+        <meta name="author" content="Jordi V">
+        <title>Exercise</title>
+        
+    </head>
+    <body>
+    
+    <form action="#saludo">
+        <label for="firstName">Name:</label><input type="text" id="firstName">
+        <label for="lastName">Owner:</label><input type="text" id="owner">
+        <label for="kindOf">Animal:</label>
+            <select id="kindOf">
+                <option>Select an animal</option>
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+                <option value="duck">Duck</option>
+            </select>
+        <input type="submit" value="Rellenar datos" onclick="enviarSaludo()">     
+    </form>
+    
+    <p id="saludo"></p>
+    <script src="./program.js"></script>
+    <script>
+    
+        function enviarSaludo(){
+            
+            let animal = new Animal(document.getElementById("firstName").value, document.getElementById("owner").value);
+           //console.log
+            console.log(animal.getFirstName());
+            let animalWithLegs = document.getElementById("kindOf").value;
+            let kindOfAnimal;
+            switch (document.getElementById("kindOf").value) { //animalWithLegs
+                case "dog":
+                    kindOfAnimal = new Dog(document.getElementById("firstName").value, document.getElementById("owner").value);
+                    break;
+                case "cat":
+                    kindOfAnimal = new Cat(document.getElementById("firstName").value, document.getElementById("owner").value);
+                    break;
+                case "dick":
+                    kindOfAnimal = new Duck(document.getElementById("firstName").value, document.getElementById("owner").value);
+                    break;
+                default:
+                    throw "Error selecting animal. It's empty";
+            }
+            console.log(kindOfAnimal);
+            if ( kindOfAnimal instanceof Dog) console.log(Dog.sound()); //static method
+            console.log(kindOfAnimal.legs());
+            console.log(animal.sayGoodBye());
+        }
+
+        function changeOwner(){
+            var animal = new Animal(document.getElementById("firstName").value, document.getElementById("owner").value);
+           //console.log
+            alert(animal.getFirstName());
+            var animalWithLegs = document.getElementById("kindOf").value;
+            var kindOfAnimal;
+            switch (animalWithLegs) {
+                case "dog":
+                    kindOfAnimal = new Dog(document.getElementById("firstName").value, document.getElementById("owner").value);
+                    break;
+                case "cat":
+                    kindOfAnimal = new Cat(document.getElementById("firstName").value, document.getElementById("owner").value);
+                    break;
+                case "dick":
+                    kindOfAnimal = new Duck(document.getElementById("firstName").value, document.getElementById("owner").value);
+                    break;
+                default:
+                    throw "Error selecting animal. It's empty";
+            }
+            console.log(animalWithLegs);
+            alert(kindOfAnimal.legs());
+            alert(animal.sayGoodBye());
+        }
+    </script>
+
+    </body>
+</html>
