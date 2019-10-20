@@ -6,9 +6,7 @@
   "author": "jordi valentín",
   "license": "MIT",
   "scripts": {
-    "readCsv": "node stream-require.js",
     "server": "node server.js",
-    "server:express": "node server-express.js",
     "watch": "nodemon --watch server.js"
   },
   "dependencies": {
