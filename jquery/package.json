@@ -8,7 +8,8 @@
   "scripts": {
     "readCsv": "node stream-require.js",
     "server": "node server.js",
-    "server:express": "node server-express.js"
+    "server:express": "node server-express.js",
+    "watch": "nodemon --watch server.js"
   },
   "dependencies": {
     "csv-parser": "^2.3.1",
